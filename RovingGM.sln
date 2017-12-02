@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RovingGM", "RovingGM\RovingGM.csproj", "{17E1629F-9B39-42E2-BA66-8055ACECF28F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RovingGM.Tests", "RovingGM.Tests\RovingGM.Tests.csproj", "{7FDDEFD1-7C16-4CAA-8733-7035FC8F7596}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17E1629F-9B39-42E2-BA66-8055ACECF28F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E1629F-9B39-42E2-BA66-8055ACECF28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E1629F-9B39-42E2-BA66-8055ACECF28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E1629F-9B39-42E2-BA66-8055ACECF28F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FDDEFD1-7C16-4CAA-8733-7035FC8F7596}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FDDEFD1-7C16-4CAA-8733-7035FC8F7596}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FDDEFD1-7C16-4CAA-8733-7035FC8F7596}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FDDEFD1-7C16-4CAA-8733-7035FC8F7596}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
