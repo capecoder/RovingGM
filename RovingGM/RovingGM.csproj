@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,12 +52,16 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\portable-net45+win8+wpa81\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -83,6 +88,7 @@
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -154,32 +160,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
-    <Content Include="Account\AddPhoneNumber.aspx" />
-    <Content Include="Account\Confirm.aspx" />
-    <Content Include="Account\Forgot.aspx" />
-    <Content Include="Account\Lockout.aspx" />
-    <Content Include="Account\Login.aspx" />
-    <Content Include="Account\Manage.aspx" />
-    <Content Include="Account\ManageLogins.aspx" />
-    <Content Include="Account\ManagePassword.aspx" />
-    <Content Include="Account\OpenAuthProviders.ascx" />
-    <Content Include="Account\Register.aspx" />
-    <Content Include="Account\RegisterExternalLogin.aspx" />
-    <Content Include="Account\ResetPassword.aspx" />
-    <Content Include="Account\ResetPasswordConfirmation.aspx" />
-    <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
-    <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="Contact.aspx" />
+    <Content Include="ConfirmationPageWithGoals.aspx" />
+    <Content Include="ConfirmationPage.aspx" />
+    <Content Include="ContactReportWithGoals.aspx" />
+    <Content Include="ContactReportResultWithGoals.aspx" />
+    <Content Include="ContactReportResult.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="LeadsContacted.aspx" />
+    <Content Include="EmployeesTrained.aspx" />
+    <Content Include="EditableContactReport.aspx" />
+    <Content Include="Content\bootstrap.cosmo.css" />
+    <Content Include="Content\bootstrap.cosmo.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\StyleSheet.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Account\Web.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="CustomerIssues.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="ContactReport.aspx" />
+    <Content Include="Menu.aspx" />
+    <Content Include="ManageGoals.aspx" />
+    <Content Include="IssuesVisits.aspx" />
+    <Content Include="PartsVisits.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -212,14 +226,13 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Site.Master" />
-    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="SummaryReport.aspx" />
+    <Content Include="ucLoginStatus.ascx" />
+    <Content Include="SalesVisits.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Site.Mobile.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,114 +241,97 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AddPhoneNumber.aspx.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Confirm.aspx.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Confirm.aspx.designer.cs">
-      <DependentUpon>Confirm.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Forgot.aspx.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Forgot.aspx.designer.cs">
-      <DependentUpon>Forgot.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Lockout.aspx.cs">
-      <DependentUpon>Lockout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Lockout.aspx.designer.cs">
-      <DependentUpon>Lockout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Manage.aspx.cs">
-      <DependentUpon>Manage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Manage.aspx.designer.cs">
-      <DependentUpon>Manage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ManageLogins.aspx.cs">
-      <DependentUpon>ManageLogins.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ManageLogins.aspx.designer.cs">
-      <DependentUpon>ManageLogins.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ManagePassword.aspx.cs">
-      <DependentUpon>ManagePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ManagePassword.aspx.designer.cs">
-      <DependentUpon>ManagePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\OpenAuthProviders.ascx.cs">
-      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
-      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
-      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
-      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ResetPassword.aspx.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ResetPassword.aspx.designer.cs">
-      <DependentUpon>ResetPassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ResetPasswordConfirmation.aspx.cs">
-      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\ResetPasswordConfirmation.aspx.designer.cs">
-      <DependentUpon>ResetPasswordConfirmation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.cs">
-      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\TwoFactorAuthenticationSignIn.aspx.designer.cs">
-      <DependentUpon>TwoFactorAuthenticationSignIn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\VerifyPhoneNumber.aspx.cs">
-      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
-      <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="clsContactReport.cs" />
+    <Compile Include="clsLeadsContacted.cs" />
+    <Compile Include="clsEmployeesTrained.cs" />
+    <Compile Include="clsCustomerIssue.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="ConfirmationPageWithGoals.aspx.cs">
+      <DependentUpon>ConfirmationPageWithGoals.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="ConfirmationPageWithGoals.aspx.designer.cs">
+      <DependentUpon>ConfirmationPageWithGoals.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmationPage.aspx.cs">
+      <DependentUpon>ConfirmationPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmationPage.aspx.designer.cs">
+      <DependentUpon>ConfirmationPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactReportWithGoals.aspx.cs">
+      <DependentUpon>ContactReportWithGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactReportWithGoals.aspx.designer.cs">
+      <DependentUpon>ContactReportWithGoals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactReport.aspx.designer.cs">
+      <DependentUpon>ContactReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactReportResultWithGoals.aspx.cs">
+      <DependentUpon>ContactReportResultWithGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactReportResultWithGoals.aspx.designer.cs">
+      <DependentUpon>ContactReportResultWithGoals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactReportResult.aspx.cs">
+      <DependentUpon>ContactReportResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactReportResult.aspx.designer.cs">
+      <DependentUpon>ContactReportResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LeadsContacted.aspx.cs">
+      <DependentUpon>LeadsContacted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeadsContacted.aspx.designer.cs">
+      <DependentUpon>LeadsContacted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeesTrained.aspx.cs">
+      <DependentUpon>EmployeesTrained.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EmployeesTrained.aspx.designer.cs">
+      <DependentUpon>EmployeesTrained.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditableContactReport.aspx.cs">
+      <DependentUpon>EditableContactReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactReport.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>ContactReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\daUser.cs" />
+    <Compile Include="DataAccess\daUsers.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
+    <Compile Include="DataAccess\dsUser.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="DataAccess\dsUsers.cs">
+      <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DatabaseCalls.cs" />
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DbUtility.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -346,31 +342,86 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="CustomerIssues.aspx.cs">
+      <DependentUpon>CustomerIssues.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
+    <Compile Include="CustomerIssues.aspx.designer.cs">
+      <DependentUpon>CustomerIssues.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="MyCustomException.cs" />
+    <Compile Include="IssuesVisits.aspx.cs">
+      <DependentUpon>IssuesVisits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IssuesVisits.aspx.designer.cs">
+      <DependentUpon>IssuesVisits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ManageGoals.aspx.cs">
+      <DependentUpon>ManageGoals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageGoals.aspx.designer.cs">
+      <DependentUpon>ManageGoals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="clsGoals.cs" />
+    <Compile Include="PartsVisits.aspx.cs">
+      <DependentUpon>PartsVisits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PartsVisits.aspx.designer.cs">
+      <DependentUpon>PartsVisits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SessionWrapper.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewSwitcher.ascx.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    <Compile Include="SummaryReport.aspx.cs">
+      <DependentUpon>SummaryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ViewSwitcher.ascx.designer.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    <Compile Include="SummaryReport.aspx.designer.cs">
+      <DependentUpon>SummaryReport.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ucLoginStatus.ascx.cs">
+      <DependentUpon>ucLoginStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ucLoginStatus.ascx.designer.cs">
+      <DependentUpon>ucLoginStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="Users.cs" />
+    <Compile Include="SalesVisits.aspx.cs">
+      <DependentUpon>SalesVisits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SalesVisits.aspx.designer.cs">
+      <DependentUpon>SalesVisits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

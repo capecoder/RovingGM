@@ -1,0 +1,58 @@
+/*
+	Latitude by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Basic */
+
+	body, input, select, textarea {
+		font-size: 11pt;
+	}
+
+/* Image */
+
+	.image img {
+		border-width: 3px;
+	}
+
+/* Wrapper */
+
+	.wrapper {
+		padding: 4em 0;
+	}
+
+/* Banner */
+
+	#banner {
+		padding: 11em 0 9em 0;
+	}
+
+.logo  {
+			position: absolute;
+			top: 1em;
+			right: 0em;
+			left: 0em;
+	}
+	
+	.logo img {
+		display: block;
+			margin: 0 auto;
+			
+			max-width: 90%;
+			z-index: 10000;
+	}
+
+/* Main */
+
+	#main .container > section {
+		border-top: solid 3px #e8eaeb;
+		margin: 4em 0 0 0;
+		padding: 4em 0 0 0;
+	}
+
+/* Footer */
+
+	#footer {
+		padding: 4em 0;
+	}

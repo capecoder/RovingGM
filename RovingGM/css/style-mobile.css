@@ -1,0 +1,80 @@
+/*
+	Latitude by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+*/
+
+/* Basic */
+
+	body, input, select, textarea {
+		font-size: 11pt;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		line-height: 1.5em;
+	}
+
+	h3 {
+		font-size: 1.25em;
+		line-height: 1.5em;
+	}
+
+	h4 {
+		font-size: 1em;
+		line-height: 1.5em;
+	}
+
+/* Section/Article */
+
+	header.major {
+		margin: 2em 0 2em 0;
+	}
+
+		header.major h2 {
+			font-size: 1.5em;
+		}
+
+		header.major p {
+			font-size: 1em;
+		}
+
+/* Banner */
+
+	#banner {
+		padding: 5em 2em 4em 2em;
+	}
+
+		#banner header h2 {
+			font-size: 1.5em;
+		}
+	#banner header p {
+			color: #ffffff;
+		}	
+		
+		
+
+/* Intro */
+
+	#intro h2 {
+		font-size: 1.5em;
+	}
+
+/* Main */
+
+	#main {
+		padding: 2em 1em;
+	}
+
+/* Footer */
+
+	#footer {
+		padding: 3em 1em;
+	}
+
+		#footer .copyright li {
+			border-left: 0;
+			display: block;
+			margin-left: 0;
+			padding-left: 0;
+		}
