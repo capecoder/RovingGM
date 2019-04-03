@@ -11,7 +11,7 @@ namespace RovingGM
     public partial class EmployeesTrained: System.Web.UI.Page
     {
 
-        clsEmployeesTrained Employee = new clsEmployeesTrained();
+        ClsEmployeesTrained Employee = new ClsEmployeesTrained();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

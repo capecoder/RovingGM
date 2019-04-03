@@ -14,16 +14,16 @@ using System.Data.SqlClient;
 /// </summary>
 namespace RovingGM
 {
-    public class clsEmployeesTrained
+    public class ClsEmployeesTrained
     {
         SessionWrapper sw = new SessionWrapper();
         DatabaseCalls dc = new DatabaseCalls();
 
-        public int id { get; set; }
-        public int visitId { get; set; }
-        public string employeeName { get; set; }
-        public string topicsCovered { get; set; }
-        public string resolution { get; set; }
+        public int Id { get; set; }
+        public int VisitId { get; set; }
+        public string EmployeeName { get; set; }
+        public string TopicsCovered { get; set; }
+        public string Resolution { get; set; }
 
         public DataTable Fetch()
         {
